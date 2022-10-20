@@ -1,4 +1,5 @@
-
+# For new release of current preprint by Rico Schmitt:
+https://journal.medicine.berlinexchange.de/pub/nqjpou17/release/1
 
 # Filtering function für Rico:
 
@@ -12,7 +13,7 @@ filtering = function(x,y){ # x = id column vector; y = full data set
                                          # function wont work:   
   
   inter2=filter(binded, inter == "1" )   # filter rows with binary 0 :=
-                                         # explicit non (!) dubplicate values
+                                         # explicit non (!) duplicate values
   
   blank = matrix(0,length(x))            # matrix vector list for the for loop:
   
