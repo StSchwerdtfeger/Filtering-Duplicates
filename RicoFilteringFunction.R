@@ -26,6 +26,7 @@ filtering = function(x,y){ # x = id column vector; y = full data set (i.e., give
   
   inter2=filter(binded, inter == "1" )    # filter rows with binary 0 :=
                                           # explicit non (!) duplicate values
+  # inter2 = filter(binded, inter != "0") # => optionally delivers equivalent results. 
   
   blank = matrix(0,length(x))             # matrix vector list for the nested for loop:
   
