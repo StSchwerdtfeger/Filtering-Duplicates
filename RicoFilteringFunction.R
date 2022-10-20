@@ -24,9 +24,9 @@ filtering = function(x,y){ # x = id column vector; y = full data set (i.e., give
        if(x[j] == inter2$x[i]){          # if i_dth value is equivalent to 
                                          # the evaluated explicit duplicate id values
           blank[j] = 1  # then / in such a case assing a 1 to the redundant binary/logical column
-       }
-     }
-   }
+       } # End if
+     } # End for j
+   } # End for i
   
   data_frame = cbind(y,blank)   # Now combinde the redundant binary column 
                                 # with the whole data frame that carries 
