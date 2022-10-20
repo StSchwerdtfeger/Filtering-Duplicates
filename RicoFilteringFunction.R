@@ -1,22 +1,25 @@
 # For new release of current preprint by Rico Schmitt:
 https://journal.medicine.berlinexchange.de/pub/nqjpou17/release/1
 
-# Filtering function für Rico:
+# The goal of this function: delete all duplicate values, as timepoint 1 and t2
+# cannot be connected unambivalently due to redundant encoding of id values. 
+
+# However: duplicated only solves for a logical with all duplicated values but
+#          does not return a logical that can be related to the original id column
+#          that entails a TRUE for the value that is duplcated itself. 
+
+# EXAMPLE: In c( 1, 2, 2, 3) duplcated() returns: false, false, true, false. 
+#          We want: to delete all 2's in that column vector! I.e., false true, true, false.
+
+# THE BELOW presents a possible solution via a nested for loop:
+#          Filtering function für Rico:
 
 filtering = function(x,y){ # x = id column vector; y = full data set (i.e., given class = data frame)
   library(dplyr) # load dplyr
   inter = duplicated(x)*1  # duplicated gives a logical, multiplied by 1
                            # and transforms it into a binary vector  
-                           # The goal of this function: delete all duplicate values, as timepoint 1 and t2
-                           # cannot be connected unambivalently due to redundant encoding of id values. 
-                               # However: duplicated only solves for a logical with all duplicated values but
-                               #          does not return a logical that can be related to the original id column
-                               #          that entails a TRUE for the value that is duplcated itself. 
-                               # EXAMPLE: In c( 1, 2, 2, 3) duplcated() returns: false, false, true, false. 
-                               #          We want: to delete all 2's in that column vector! I.e., false true, true, false.
-                               # THE BELOW presents a possible solution via a nested for loop:
   
-,  binded = as.data.frame(cbind(inter,x)) # bind id column and binary vector (column)
+  binded = as.data.frame(cbind(inter,x)) # bind id column and binary vector (column)
                                           # + change class to data frame,
                                           # otherwise upcoming dplyr filter 
                                           # function wont work:   
