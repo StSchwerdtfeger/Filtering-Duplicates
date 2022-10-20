@@ -37,9 +37,9 @@ filtering = function(x,y){ # x = id column vector; y = full data set (i.e., give
                                          # matter how many duplicates there are,
     #  in other words: if any id value had a duplicate, both the original 
     #  and duplicate were erased, due to the fact that column and row wise
-    #  relation cannot be evaluated unambivalently. 
+    #  relation cannot be evaluated unambivalently in the given data set by Rico Schmitt. 
   return(filtered) # return filtered returns the values of the respective object, 
-               # i.e., the filtered full data frame
+                   # i.e., the filtered full data frame
 } # End of function
   
 
