@@ -36,12 +36,12 @@ filtering = function(x,y){ # x = id column vector; y = full data set (i.e., give
                                           # i.e., each value with duplicates
      for(j in 1:length(x)){               # + for each respective duplicate
                                           #  value in column vector with the ids,
-       if(x[j] == inter2$x[i]){           # if i_dth value is equivalent to 
+        if(x[j] == inter2$x[i]){          # if i_dth value is equivalent to 
                                           # the evaluated explicit duplicate id values:
-          blank[j] = 1  # then / in such a case assing a 1 to the redundant binary/logical column.
-       } # End if
+           blank[j] = 1  # then / in such a case assing a 1 to the redundant binary/logical column.
+        } # End if
      } # End for j
-   } # End for i
+  } # End for i
   
   data_frame = cbind(y,blank)   # Now combinde the redundant binary column 
                                 # with the whole data frame that carries 
