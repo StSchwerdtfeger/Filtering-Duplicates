@@ -24,7 +24,7 @@ filtering = function(x,y){ # x = id column vector; y = full data set (i.e., give
                                           # otherwise upcoming dplyr filter 
                                           # function wont work:   
   
-  inter2=filter(binded, inter == "1" )    # filter rows with binary 0 :=
+  inter2 = filter(binded, inter == "1" )    # filter rows with binary 0 :=
                                           # explicit non (!) duplicate values
   # inter2 = filter(binded, inter != "0") # => optionally delivers equivalent results. 
   
@@ -44,14 +44,15 @@ filtering = function(x,y){ # x = id column vector; y = full data set (i.e., give
   data_frame = cbind(y,blank)   # Now combinde the redundant binary column 
                                 # with the whole data frame that carries 
                                 # the id column
-  data_frame = as.data.frame(data_frame)     # turn it into a data frame
-  filtered=filter(data_frame, blank != "1" ) # ... in order to finally filter 
-                                             # all (!) redundant id values, no 
-                                             # matter how many duplicates there are,
-    #  in other words: if any id value had a duplicate, both the original 
-    #  and duplicate were erased, due to the fact that column and row wise
-    #  relation cannot be evaluated unambivalently in the given data set by Rico Schmitt. 
-  return(filtered) # return filtered returns the values of the respective object, 
+  data_frame = as.data.frame(data_frame)       # turn it into a data frame
+  filtered = filter(data_frame, blank != "1" ) # ... in order to finally filter 
+                                               # all (!) redundant id values, no 
+                                               # matter how many duplicates there are,
+                 #  in other words: if any id value had a duplicate, both the original 
+                 #  and duplicate were erased, due to the fact that column and row wise
+                 #  relation cannot be evaluated unambivalently in the given data set 
+                 # of the above mentioned paper by Rico Schmitt. 
+  return(filtered) # Return filtered returns the values of the respective object, 
                    # i.e., the filtered full data frame
 } # End of function
   
