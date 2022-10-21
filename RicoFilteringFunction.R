@@ -21,12 +21,12 @@ filtering = function(x,y){ # x = id column vector; y = full data set (i.e., give
   inter = duplicated(x)*1  # duplicated gives a logical, multiplied by 1
                            # and transforms it into a binary vector  
   
-  binded = as.data.frame(cbind(inter,x)) # bind id column and binary vector (column)
+  binded = as.data.frame(cbind(inter,x))  # bind id column and binary vector (column)
                                           # + change class to data frame,
                                           # otherwise upcoming dplyr filter 
                                           # function wont work:   
   
-  inter2 = filter(binded, inter == "1" )    # filter rows with binary 0 :=
+  inter2 = filter(binded, inter == "1" )  # filter rows with binary 0 :=
                                           # explicit non (!) duplicate values
   # inter2 = filter(binded, inter != "0") # => optionally delivers equivalent results. 
   
