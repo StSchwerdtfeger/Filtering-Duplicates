@@ -12,8 +12,8 @@ https://journal.medicine.berlinexchange.de/pub/nqjpou17/release/1
 #          We want: to delete all 2's in that column vector! I.e., false true, true, false.
 
 # THE BELOW presents a possible solution via a nested for loop:
-#          Filtering function für Rico:
 
+# Special filtering function for Rico:
 filtering = function(x,y){ # x = id column vector; y = full data set (i.e., given class = data frame)
   library(dplyr) # load dplyr
   inter = duplicated(x)*1  # duplicated gives a logical, multiplied by 1
