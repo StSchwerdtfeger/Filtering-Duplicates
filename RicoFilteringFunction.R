@@ -6,7 +6,7 @@ https://journal.medicine.berlinexchange.de/pub/nqjpou17/release/1
 
 # However: duplicated() only solves for a logical with all duplicated values but
 #          does not return a logical that can be related to the original id column
-#          that entails a TRUE for the value that is duplcated itself. 
+#          that entails a TRUE for the value that is duplcated itself, as well.
 
 # EXAMPLE: In c( 1, 2, 2, 3) duplcated() returns: false, false, true, false. 
 #          We want: to delete all 2's in that column vector! I.e., false true, true, false.
