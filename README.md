@@ -1,4 +1,4 @@
-# Filtering-Dublictes
+# Filtering-Duplicates
 Filtering Function for Rico Schmitt: https://journal.medicine.berlinexchange.de/pub/nqjpou17/release/1
 
  The goal of this function: delete all duplicate values, as timepoint 1 and t2
