@@ -54,7 +54,7 @@ filtering = function(x,y){ # x = id column vector; y = full data set (i.e., give
                  #  in other words: if any id value had a duplicate, both the original 
                  #  and duplicate were erased, due to the fact that column and row wise
                  #  relation cannot be evaluated unambivalently in the given data set 
-                 # of the above mentioned paper by Rico Schmitt. 
+                 #  of the above mentioned paper by Rico Schmitt. 
   return(filtered) # Return filtered returns the values of the respective object, 
                    # i.e., the filtered full data frame
 } # End of function
