@@ -11,7 +11,8 @@ https://journal.medicine.berlinexchange.de/pub/nqjpou17/release/1
 # EXAMPLE: In c( 1, 2, 2, 3) duplcated() returns: false, false, true, false. 
 #          We want to delete all 2's in that column vector! I.e., we desire an output of
 #          false true, true, false, in order to use that column vector to identify 
-#          the rows in the data set, which are supposed to be deleted. 
+#          the rows in the data set, which are supposed to be deleted: 
+#          any duplicate id value. 
 
 # THE BELOW presents a possible solution via a nested for loop:
 
