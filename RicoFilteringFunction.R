@@ -9,7 +9,9 @@ https://journal.medicine.berlinexchange.de/pub/nqjpou17/release/1
 #          that entails a TRUE for the value that is duplcated itself, as well.
 
 # EXAMPLE: In c( 1, 2, 2, 3) duplcated() returns: false, false, true, false. 
-#          We want: to delete all 2's in that column vector! I.e., false true, true, false.
+#          We want to delete all 2's in that column vector! I.e., we desire an output of
+#          false true, true, false, in order to that columnvector to identify the rows 
+#          in the data set which are supposed to be deleted. 
 
 # THE BELOW presents a possible solution via a nested for loop:
 
