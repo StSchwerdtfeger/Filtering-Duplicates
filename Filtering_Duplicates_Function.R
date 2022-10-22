@@ -16,7 +16,7 @@ https://journal.medicine.berlinexchange.de/pub/nqjpou17/release/1
 
 # THE BELOW presents a possible solution via a nested for loop:
 
-# Special filtering function for Rico:
+# Special filtering function for Rico Schmitt:
 filtering = function(x,y){ # x = id column vector; y = full data set (i.e., given class = data frame)
   library(dplyr) # load dplyr
   inter = duplicated(x)*1  # duplicated gives a logical, multiplied by 1
