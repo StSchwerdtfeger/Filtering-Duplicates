@@ -2,11 +2,12 @@
 https://journal.medicine.berlinexchange.de/pub/nqjpou17/release/1
 
 # The purpose of this function: delete all duplicate values, as timepoint 1 and t2
-# cannot be connected unambivalently due to redundant encoding of id values. 
+# cannot be connected unambivalently due to redundant encoding of id values in the 
+# above publication. 
 
 # Issue:   duplicated() only solves for a logical with all duplicated values but
-#          does not return a logical that can be related to the original id column
-#          that entails a TRUE for the value that is duplcated itself, as well.
+#          does not return a logical that can be related to the original id column,
+#          since it does not entails a TRUE for the value that is duplcated itself as well.
 
 # EXAMPLE: In c( 1, 2, 2, 3) duplcated() returns: false, false, true, false. 
 #          We want to delete all 2's in that column vector! I.e., we desire an output of
@@ -33,14 +34,14 @@ filtering = function(x,y){ # x = id column vector; y = full data set (i.e., give
   
   blank = matrix(0,length(x))             # matrix vector list for the nested for loop:
   
-  for(i in 1:length(inter2$x)){           # for each individual[i] value of inter2
-                                          # i.e., each value with duplicates
+  for(i in 1:length(inter2$x)){           # for each individual [i] value of inter2 
+                                          # i.e., each value with duplicate(s)
      for(j in 1:length(x)){               # + for each respective duplicate
                                           #  value in column vector with the ids,
-        if(x[j] == inter2$x[i]){          # if i_dth value is equivalent to 
+        if(x[j] == inter2$x[i]){          # if the i_dth value is equivalent to 
                                           # the evaluated explicit duplicate id values:
            blank[j] = 1  # then / in such a case assing a 1 to the redundant binary/logical column.
-        } # End if
+        } # End if       # now any duplicate and the value that is duplicated are tagged by a logical!
      } # End for j
   } # End for i
   
