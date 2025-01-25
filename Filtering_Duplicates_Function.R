@@ -59,5 +59,34 @@ filtering = function(x,y){ # x = id column vector; y = full data set (i.e., give
   return(filtered) # Return filtered returns the values of the respective object, 
                    # i.e., the filtered full data frame
 } # End of function
-  
+
+
+
+# Test data frame with duplicates in row 1 and 3 (id10):
+test_dup = as.data.frame(cbind(c("id10","id12","id10","id14","id15","id16"),
+                         c("random entry","random entry","random entry"), 
+                         c("random entry","random entry","random entry")))
+# > test_dup
+#     V1           V2            V3
+# 1 id10 random entry random entry
+# 2 id12 random entry random entry
+# 3 id10 random entry random entry
+# 4 id14 random entry random entry
+# 5 id15 random entry random entry
+# 6 id16 random entry random entry
+
+# id10 has a duplicate. We want to delete both, i.d., row 1 and 3:
+filtering(test_dup$V1,test_dup)
+
+# Row 1 and 3, i.e. id10 has been deleted. I was was lazy
+# so the redundant column "blank" remains and only entails  
+# zeros, since all lines that marked duplicate and the value 
+# that was duplicated with a 1 have been deleted...
+
+# V1               V2           V3 blank
+# 1 id12 random entry random entry     0
+# 2 id14 random entry random entry     0
+# 3 id15 random entry random entry     0
+# 4 id16 random entry random entry     0
+
 
